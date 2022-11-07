@@ -1,0 +1,145 @@
+/* Main Content Container div */
+#content {
+    height: 87vh;
+    width: 95%;
+    margin: auto;
+    top: 50px;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Home Content Div */
+#homeContent {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+
+/* Navbar container div 2 */
+#navBar {
+    display: flex;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #4B5D8A;
+    border-radius: 10px;
+    top: -25px;
+}
+
+/* navbar div classes */
+.page {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+/* Navbar hyperlink text editing */
+.page a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+/* Navbar left/right curved border */
+#home {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#predictions {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Flames on nav bar while hovering */
+#predictions:hover {
+    background-image: url("bfFinal.gif");
+}
+
+#info:hover {
+    background-image: url("bfFinal.gif");
+}
+
+#firedata:hover {
+    background-image: url("bfFinal.gif");
+}
+
+/* Changing nav button colors on hover, keeping current page black */
+#home a {
+    color: black;
+}
+
+#info a:hover {
+    color: black;
+}
+
+#firedata a:hover {
+    color: black;
+}
+
+#predictions a:hover {
+    color: black;
+}
+
+/* Body Background color CSS */
+body {
+    background-color: #767778;
+}
+
+/* Footer CSS */
+.footer {
+    height: 75px;
+    background-color: #4B5D8A;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    margin-bottom: 0px;
+    z-index: 10;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+.footerContent {
+    display: inline-block;
+    height: 100%;
+}
+
+#footerText {
+    width: 80%;
+}
+
+#footerText p {
+    margin-top: 20px;
+}
+
+#fireballImg1 {
+    width: 10%;
+}
+
+#fireballImg1 img{
+    margin-top: 10px;
+}
+
+#fireballImg2 {
+    width: 10%;
+}
+
+#fireballImg2 img{
+    margin-top: 10px;
+}

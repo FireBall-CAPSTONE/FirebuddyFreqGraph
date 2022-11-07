@@ -1,0 +1,222 @@
+/* Main Content Container div */
+#content {
+    width: 95%;
+    margin: auto;
+    top: 50px;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Info Content Div */
+#infoContent {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+#fballsborder {
+    background-color: #0E1114;
+    border-radius: 8px;
+    width: 835px;
+    height: 228px;
+    margin: auto;
+}
+
+#differentfballs-png {
+    width: 814px;
+    height: 210px;
+    margin-top: 8px;
+}
+
+#infoBoxContainer {
+    margin-top: 47px;
+    width: 835px;
+    height: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#infoBoxContainer img {
+    width: 64px;
+    height: 64px;
+    margin-left: 20px;
+    float: left;
+}
+
+#infoBoxContainer h2 {
+    color: #FF9052;
+    font-family: Lato;
+    font-size: 35px;
+    display: flex;
+    margin-block: 0;
+    margin-inline: 0;
+    height: 64px;
+    align-items: center;
+}
+
+#infoBoxContainer div {
+    background-color: rgba(14, 17, 20, 0.53);
+    border-radius: 8px;
+    width: 835px;
+    height: 228px;
+    margin-top: -50px;
+    margin-bottom: 30px;
+}
+
+#infoBoxContainer div p {
+    padding: 30px;
+    color: #FFFFFF;
+    font-family: Lato;
+    font-size: 20px;
+    line-height: 26px;
+    width: 802px;
+}
+
+#memberTable {
+    width: 100%;
+    margin-top: -48px;
+    margin-left: 30px;
+}
+
+#memberTable td {
+    padding: 1rem;
+    text-align: left;
+    font-family: Lato;
+    color: #FFFFFF;
+}
+
+#linkColor {
+    color: #00A6FF;
+}
+
+/* Navbar container div 2 */
+#navBar {
+    display: flex;
+    width: 800px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background-color: #4B5D8A;
+    border-radius: 10px;
+    top: -25px;
+}
+
+/* navbar div classes */
+.page {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: top;
+    line-height: 50px;
+}
+
+/* Navbar hyperlink text editing */
+.page a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+
+/* Navbar left/right curved border */
+#home {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#predictions {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Flames on nav bar while hovering */
+#predictions:hover {
+    background-image: url("bfFinal.gif");
+}
+
+#home:hover {
+    background-image: url("bfFinal.gif");
+}
+
+#firedata:hover {
+    background-image: url("bfFinal.gif");
+}
+
+/* Changing nav button colors on hover, keeping current page black */
+#home a:hover {
+    color: black;
+}
+
+#info a {
+    color: black;
+}
+
+#firedata a:hover {
+    color: black;
+}
+
+#predictions a:hover {
+    color: black;
+}
+
+/* Body Background color CSS */
+body {
+    background-color: #767778;
+}
+
+/* Footer CSS */
+.footer {
+    height: 75px;
+    background-color: #4B5D8A;
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    margin-bottom: 0px;
+    z-index: 10;
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+    bottom: 0;
+}
+
+.footerContent {
+    display: inline-block;
+    height: 100%;
+}
+
+#footerText {
+    width: 80%;
+}
+
+#footerText p {
+    margin-top: 20px;
+}
+
+#fireballImg1 {
+    width: 10%;
+}
+
+#fireballImg1 img{
+    margin-top: 10px;
+}
+
+#fireballImg2 {
+    width: 10%;
+}
+
+#fireballImg2 img{
+    margin-top: 10px;
+}

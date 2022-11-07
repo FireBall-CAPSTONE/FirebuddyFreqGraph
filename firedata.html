@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FireBuddy</title>
+    <link rel="stylesheet" href="firedata.css">
+    <!--CDN's for Chart.js, D3.js, D3 scaler-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale@4" defer></script>
+  </head>
+  <body>
+    <div id="content">
+        <div id="navBar">
+            <div class="page" id="home">
+                <a href="home.html">Home</a>
+            </div>
+            <div class="page" id="info">
+                <a href="info.html">Info</a>
+            </div>
+            <div class="page" id="firedata">
+                <a href="firedata.html">FireData</a>
+            </div>
+            <div class="page" id="predictions">
+                <a href="predictions.html">Predictions</a>
+            </div>
+        </div>
+
+        <div id="firedataContent"> 
+            <p>Fireball Frequency Graph</p>
+            <div id="chartWrapper">
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <!--text input year and button to update graph with year-->
+            <p>Update By Year (1988-2022)</p>
+            <input type="number" id="year" min="1988" max="2022" placeholder="Enter year">
+            <button id="update">Update</button>
+            <!--update graph with year span-->
+            <p>Update By Year Span</p>
+            <input type="number" id="startYear" placeholder="Start Year" min="1988" max="2022">
+            <input type="number" id="endYear" placeholder="End Year" min="1988" max="2022">
+            <button id="updateSpan">Update</button>
+
+        </div>
+        
+    </div>
+    
+    
+        
+
+    
+
+    <footer class="footer">
+        <div class="footerContent" id="fireballImg1">
+            <img src="fBall.png" alt="Fireball Footer">
+        </div>
+        <div class="footerContent" id="footerText">
+            <p>FireBuddy | Team FireBall @2022</p>
+        </div>
+        <div class="footerContent" id="fireballImg2">
+            <img src="fBall.png" alt="Fireball Footer">
+        </div>
+    </footer>
+    <script src="scripts/script.js" defer></script>
+  </body>
+</html>
