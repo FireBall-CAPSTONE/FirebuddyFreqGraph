@@ -115,10 +115,6 @@ const graph = fireDF => {
             myChart.data.datasets[0].label = `Fireball Frequency - ${year}`; //update dataset title with selected year
             myChart.update();
 
-            console.log(year)
-            console.log(monthCount)
-            console.log(months)
-            console.log(count)
             //pass graph data to interpretation function
             interpretYear(year, months, monthCount);
         }
@@ -170,7 +166,7 @@ const graph = fireDF => {
             }
         }
         maxMonth.reverse();
-        console.log('maxMonth ' + maxMonth)
+        //console.log('maxMonth ' + maxMonth)
         //get months with the least number of fireballs
         const min = [];
         for(let i = 0; i < monthCount.length; i++) {
@@ -179,13 +175,13 @@ const graph = fireDF => {
             }
         }
         min.reverse();
-        console.log('min ' + min)
+        //console.log('min ' + min)
         //get min value in monthCount array
         const minCount = Math.min(...monthCount);
         
         //get total number of fireballs in year
         const total = monthCount.reduce((a, b) => a + b, 0);
-        console.log('total ' + total)
+        //console.log('total ' + total)
         
         //write interpretation to html
         document.getElementById('interpret').innerHTML= `
@@ -209,7 +205,6 @@ const graph = fireDF => {
                 maxYear.push(years[i]);
             }
         }
-        maxYear.reverse();
         //get min value in yearCount array
         const min = Math.min(...yearCount);
         //get years with the least number of fireballs
@@ -219,7 +214,6 @@ const graph = fireDF => {
                 minYear.push(years[i]);
             }
         }
-        minYear.reverse();
         //get total number of fireballs in year span
         const total = yearCount.reduce((a, b) => a + b, 0);
         
