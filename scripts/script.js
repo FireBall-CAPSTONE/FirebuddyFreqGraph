@@ -114,6 +114,13 @@ const graph = fireDF => {
             myChart.options.scales.x.title.text = "Months"; //set x axis title to 'Months'
             myChart.data.datasets[0].label = `Fireball Frequency - ${year}`; //update dataset title with selected year
             myChart.update();
+
+            console.log(year)
+            console.log(monthCount)
+            console.log(months)
+            console.log(count)
+            //pass graph data to interpretation function
+            interpretYear(year, months, monthCount);
         }
         
     }
@@ -146,9 +153,91 @@ const graph = fireDF => {
             myChart.options.scales.x.reverse = false; 
             myChart.data.datasets[0].label = `Fireball Frequency - ${startYear} to ${endYear}`; //update dataset label with selected year span
             myChart.update(); //update chart
+            interpretSpan(startYear, endYear, years, yearCount); //pass graph data to interpretation function
         }
         
     }
+
+    //Data Interpretation from update graph by year
+    const interpretYear = (year, months, monthCount) => {
+        //get max value in monthCount array
+        const max = Math.max(...monthCount);
+        //get months with the most number of fireballs
+        const maxMonth = [];
+        for(let i = 0; i < monthCount.length; i++) {
+            if(monthCount[i] == max) {
+                maxMonth.push(months[i]);
+            }
+        }
+        maxMonth.reverse();
+        console.log('maxMonth ' + maxMonth)
+        //get months with the least number of fireballs
+        const min = [];
+        for(let i = 0; i < monthCount.length; i++) {
+            if(monthCount[i] == 1) {
+                min.push(months[i]);
+            }
+        }
+        min.reverse();
+        console.log('min ' + min)
+        //get min value in monthCount array
+        const minCount = Math.min(...monthCount);
+        
+        //get total number of fireballs in year
+        const total = monthCount.reduce((a, b) => a + b, 0);
+        console.log('total ' + total)
+        
+        //write interpretation to html
+        document.getElementById('interpret').innerHTML= `
+            <h3>Team Fireball's Data Interpretation: ${year}</h3>
+            <ul>
+                <li>The year ${year} had a total of ${total} fireballs </li>
+                <li>The month(s) with the most recorded fireballs was ${maxMonth.join(', ')}</li>
+                <li>${maxMonth.join(', ')} had recorded ${max} fireballs</li>
+                <li>The month(s) with the least recorded fireballs was ${min.join(', ')}</li>
+                <li>${min.join(', ')} had recorded ${minCount} fireballs</li>
+            </ul>`
+    }
+    //Data Interpretation from update graph by year span
+    const interpretSpan = (startYear, endYear, years, yearCount) => {
+        //get max value in yearCount array
+        const max = Math.max(...yearCount);
+        //get years with the most number of fireballs
+        const maxYear = [];
+        for(let i = 0; i < yearCount.length; i++) {
+            if(yearCount[i] == max) {
+                maxYear.push(years[i]);
+            }
+        }
+        maxYear.reverse();
+        //get min value in yearCount array
+        const min = Math.min(...yearCount);
+        //get years with the least number of fireballs
+        const minYear = [];
+        for(let i = 0; i < yearCount.length; i++) {
+            if(yearCount[i] == min) {
+                minYear.push(years[i]);
+            }
+        }
+        minYear.reverse();
+        //get total number of fireballs in year span
+        const total = yearCount.reduce((a, b) => a + b, 0);
+        
+        //write interpretation to html
+        document.getElementById('interpret').innerHTML= `
+            <h3>Team Fireball's Data Interpretation: ${startYear} to ${endYear}</h3>
+            <ul>
+                <li>The year span of ${startYear} to ${endYear} had a total of ${total} fireballs </li>
+                <li>The year(s) with the most recorded fireballs was ${maxYear.join(', ')}</li>
+                <li>${maxYear.join(', ')} had recorded ${max} fireballs</li>
+                <li>The year(s) with the least recorded fireballs was ${minYear.join(', ')}</li>
+                <li>${minYear.join(', ')} had recorded ${min} fireballs</li>
+            </ul>
+            `
+    }
+
+
+
 
     //event listener for update single year button
     document.getElementById('update').addEventListener('click', updateGraph);
