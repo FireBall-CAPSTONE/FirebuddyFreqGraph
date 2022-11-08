@@ -145,6 +145,7 @@ const graph = fireDF => {
             const yearCount = years.map(key => count[key]); //create array of year counts
             //setup chart with selected year span data
             myChart.data.labels = years; //x axis labels
+            myChart.options.scales.x.title.text = "Years"; //set x axis title to 'Years'
             myChart.data.datasets[0].data = yearCount; //y axis data
             myChart.options.scales.x.reverse = false; 
             myChart.data.datasets[0].label = `Fireball Frequency - ${startYear} to ${endYear}`; //update dataset label with selected year span
@@ -226,11 +227,8 @@ const graph = fireDF => {
                 <li>${maxYear.join(', ')} had recorded ${max} fireballs</li>
                 <li>The year(s) with the least recorded fireballs was ${minYear.join(', ')}</li>
                 <li>${minYear.join(', ')} had recorded ${min} fireballs</li>
-            </ul>
-            `
+            </ul>`
     }
-
-
 
 
     //event listener for update single year button
