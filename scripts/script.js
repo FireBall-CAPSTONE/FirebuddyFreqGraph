@@ -101,11 +101,11 @@ const graph = fireDF => {
                     }
                 }
             }
-            //console.log(count) //check if count object is created
+            //console.log(count) //(test) check if count object is created
     
             const months = Object.keys(count); //get months from count object keys
             const monthCount = months.map(key => count[key]); //get month count from count object values
-            //console.log(monthCount) //check if monthCount array is created
+            //console.log(monthCount) //(test) check if monthCount array is created
     
             //Setup chart with selected year data
             myChart.data.labels = months; //x axis labels
@@ -141,8 +141,10 @@ const graph = fireDF => {
                     }
                 }
             }
-            const years = Object.keys(count); //get years from count object keys
-            const yearCount = years.map(key => count[key]); //create array of year counts
+
+            const years = Object.keys(count); //get years from count object keys. used for labeling x axis
+            const yearCount = years.map(key => count[key]); //create array of year object values
+
             //setup chart with selected year span data
             myChart.data.labels = years; //x axis labels
             myChart.options.scales.x.title.text = "Years"; //set x axis title to 'Years'
@@ -184,6 +186,9 @@ const graph = fireDF => {
         const total = monthCount.reduce((a, b) => a + b, 0);
         //console.log('total ' + total)
         
+        //get average number of fireballs per month in ${year}
+        const average = (total / 12);
+
         //write interpretation to html
         document.getElementById('interpret').innerHTML= `
             <h3>Team Fireball's Data Interpretation: ${year}</h3>
@@ -193,6 +198,7 @@ const graph = fireDF => {
                 <li>${maxMonth.join(', ')} had recorded ${max} fireballs</li>
                 <li>The month(s) with the least recorded fireballs was ${min.join(', ')}</li>
                 <li>${min.join(', ')} had recorded ${minCount} fireballs</li>
+                <li>Average number of fireballs per month in ${year}: ${average.toFixed(2)}</li>
             </ul>`
     }
     //Data Interpretation from update graph by year span
@@ -217,6 +223,8 @@ const graph = fireDF => {
         }
         //get total number of fireballs in year span
         const total = yearCount.reduce((a, b) => a + b, 0);
+
+        const average = (total / (endYear - startYear));
         
         //write interpretation to html
         document.getElementById('interpret').innerHTML= `
@@ -227,6 +235,7 @@ const graph = fireDF => {
                 <li>${maxYear.join(', ')} had recorded ${max} fireballs</li>
                 <li>The year(s) with the least recorded fireballs was ${minYear.join(', ')}</li>
                 <li>${minYear.join(', ')} had recorded ${min} fireballs</li>
+                <li> Average number of fireballs per year: ${average.toFixed(2)}</li>
             </ul>`
     }
 
